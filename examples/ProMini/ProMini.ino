@@ -8,12 +8,12 @@ SBUS sbus(Serial);
 
 void setup()
 {
-  sbus.begin(false);
+  sbus.begin();
 }
 
 void loop()
 {
   sbus.process();
-  int value = sbus.getChannel(4);
+  int value = sbus._channels[4];
   analogWrite(3, value / 8);
 }
