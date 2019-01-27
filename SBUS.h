@@ -13,24 +13,10 @@ class SBUS {
 	public:
 		SBUS(HardwareSerial & serial) : _serial (serial) {}
 		void begin();
-		void begin(bool useTimer);
 		void process();
-		int getChannel(int channel);
-		int getNormalizedChannel(int channel);
-		int getFailsafeStatus();
-		int getFrameLoss();
-		long getGoodFrames();
-		long getLostFrames();
-		long getDecoderErrorFrames();
-		long long getLastTime();
+		volatile int _channels[18];
 	private:
 		HardwareSerial & _serial;
-		int _channels[18];
-		int _failsafe;
-		long _goodFrames;
-		long _lostFrames;
-		long _decoderErrorFrames;
-		long long _lastGoodFrame;
 };
 
 #endif
