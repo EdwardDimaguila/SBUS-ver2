@@ -9,10 +9,6 @@ void SBUS::begin() {
 }
 
 void SBUS::process() {
-	// while (_serial.available() > 25)
-	// {
-		// _serial.read();
-	// }
 	static byte buffer[25];
 	static byte buffer_index = 0;
 
